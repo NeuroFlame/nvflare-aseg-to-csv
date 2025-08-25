@@ -132,7 +132,7 @@ export default function App() {
   function formatRowLabel(idRaw: string) {
     const id = normalize(idRaw)
     const base = stripExt(id)
-    return rowLabelTemplate.replaceAll('{id}', id).replaceAll('{base}', base)
+    return rowLabelTemplate.replace(/\{id\}/g, id).replace(/\{base\}/g, base)
   }
 
   /** Build the matrix: subjects as rows, measurements as columns */
